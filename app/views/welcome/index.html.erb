@@ -1,2 +1,12 @@
 <h1>Adam's Sports Blog</h1>
 
+<h3>List of all Blogs</h3>
+
+<div class ='blogs-list'>
+	<% @blogs.each do |b| %>
+		<div><a href = "/blogs/<%= b.id %>"><%= b.title %></a></div>
+		<div><%= b.type %></div>
+	<hr>
+	<% end %>
+</div>
+

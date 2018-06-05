@@ -1,0 +1,11 @@
+<h1>Adam's Sports Blog</h1>
+
+<h3>List of all Blogs</h3>
+
+<% @blogs.each do |b| %>
+
+<div class ='blog-list'>
+	<%= b.title %>
+	<%= b.content %>
+	<%= b.sport %>
+<% end %>
