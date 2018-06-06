@@ -11,7 +11,7 @@ class BlogsController < ApplicationController
   	blog = Blog.new(blog_params)
   	blog.user_id = current_user.id
   	if blog.save
-  		redirect_to "/blog"
+  		redirect_to "/"
   	else
   		render "/blogs/new"
   	end
