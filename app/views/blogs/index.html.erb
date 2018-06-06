@@ -5,7 +5,8 @@
 <% @blogs.each do |b| %>
 
 <div class ='blog-list'>
-	<%= b.title %>
-	<%= b.content %>
-	<%= b.sport %>
+Title: <%= b.title %><br />
+Content: <%= b.content %><br />
+Sport Type: <%= b.sport %>
+<hr>
 <% end %>

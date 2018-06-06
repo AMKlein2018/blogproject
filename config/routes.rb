@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'show/index'
   
   devise_for :users
-  root 'welcome#index'
+  root 'blogs#index'
   resources :blogs
 
 end

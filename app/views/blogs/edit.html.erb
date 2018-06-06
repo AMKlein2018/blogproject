@@ -1,0 +1,9 @@
+<h2>Update Sports Blog</h2>
+
+<%= form_for @blog do |u| %>
+	Title: <%= u.text_field :title %>
+	Content: <%= u.text_field :content %>
+	Sport: <%= u.text_field :sport %>
+<%= u.submit "Update" %>
+
+<% end %>
