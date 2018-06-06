@@ -17,7 +17,8 @@
     <% end %>
 
     <% if signed_in? %>
-    User:<a href='/users/<%= current_user.id %>'><%= current_user.email %></a>
+    User:<a href='/users/'<%= current_user.id %>'><%= current_user.email %></a>
+
     <li><%= link_to "New Blog", new_blog_path %>
     <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
     <% end %>
