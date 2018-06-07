@@ -1,17 +1,17 @@
 class CommentsController < ApplicationController
-	# def index
- #    	@comments = Comment.all
- #  		end
- #  	def new
- #    	@comment = Comment.new
- #  		end
+	def index
+    	@comments = Comment.all
+  		end
+  	def new
+    	@comment = Comment.new
+  		end
 
 	def create
 		user = current_user
-		comment.user_id = user.id
+		comment.user_id = current_user.id
 		@blog = Blog.find(params[:blog_id])
 		@comment = @blog.comments.build(params[:comment])
-		if comment.save
+		if @comment.save
 			redirect_to "/blogs/#{params[:blog_id]}"
 		else
 			render "/blogs/#{params[:blog_id]}"
@@ -24,10 +24,25 @@ class CommentsController < ApplicationController
 
 	end
 
+	def update
+  		@blog = Blog.find(params[:blog_id])
+  		@comment = @post.comments.find(params[:id]) 
+  		if @comment.update_attributes(params[:comment])
+    		redirect_to blog_path(@blog)
+  		else
+    		render :action => :edit
+  		end   
+	end
 
-	# def destroy
 
-	# end
+
+	def destroy
+	  @blog = Blog.find(params[:blog_id])
+	  @comment = @blog.comments.find(params[:id]) 
+	  @comment.destroy
+	  redirect_to blog_path(:id => @blog.id)
+ 	end
+
 
 
 

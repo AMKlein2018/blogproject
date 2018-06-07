@@ -1,5 +1,3 @@
-<%= render 'comments/form' %>
-
 <h1>Blog Profile</h1>
 
 
@@ -10,8 +8,23 @@
 </div>
 <hr>
 
+<ul>
+<% @blog.comments do |c| %>
+	<li><%= c.content %></li>
+<% end %>
+</ul>
 
+<!-- update comments -->
+<ul>
+<% @blog.comments.each do |comment| %>
+  <li><%= comment.body %></li>  
+  <%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %>
+<% end %>
+</ul>
 
+<!-- end update comments  -->
+
+<%= render 'comments/form' %>
 
 <%= link_to "Edit Blog", edit_blog_path %>
 <br>
