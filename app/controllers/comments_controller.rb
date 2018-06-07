@@ -8,9 +8,11 @@ class CommentsController < ApplicationController
 
 	def create
 		user = current_user
-		comment.user_id = current_user.id
-		@blog = Blog.find(params[:blog_id])
-		@comment = @blog.comments.build(params[:comment])
+		@comment = Comment.new(comment_params)
+		@comment.user_id = current_user.id
+		blog = Blog.find(params[:blog_id])
+		@comment.blog_id = blog.id
+		# @comment = @blog.comments.build(params[:comment])
 		if @comment.save
 			redirect_to "/blogs/#{params[:blog_id]}"
 		else
@@ -24,15 +26,21 @@ class CommentsController < ApplicationController
 
 	end
 
+	def edit
+		@blog = Blog.find(params[:blog_id])
+		@comment = @blog.comments.find(params[:id])
+	end
+
 	def update
   		@blog = Blog.find(params[:blog_id])
-  		@comment = @post.comments.find(params[:id]) 
+  		@comment = @blog.comments.find(params[:id]) 
   		if @comment.update_attributes(params[:comment])
     		redirect_to blog_path(@blog)
   		else
     		render :action => :edit
   		end   
 	end
+
 
 
 
@@ -49,7 +57,7 @@ class CommentsController < ApplicationController
 
 	private
 	
-	def blog_params
+	def comment_params
 		params.require(:comment).permit(:content, :user_id, :blog_id)
 	end
 
