@@ -20,19 +20,25 @@
 </ul>
 
 <%= render 'comments/form' %>
+
+
+
 <!-- update comments -->
 <ul>
 <% @blog.comments.each do |comment| %>
   <li><%= comment.content %></li>  
   <%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %>
+  <%= link_to "Delete Comment", blog_comment_path, method: :delete %>
 <% end %>
-</ul>
+
 
 <!-- end update comments  -->
 
 
+<!-- Delete Comments -->
 
 
+<!-- end Delete Comments -->
 
 
 

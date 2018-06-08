@@ -31,10 +31,11 @@ class CommentsController < ApplicationController
 		@comment = @blog.comments.find(params[:id])
 	end
 
+	
 	def update
   		@blog = Blog.find(params[:blog_id])
   		@comment = @blog.comments.find(params[:id]) 
-  		if @comment.update_attributes(params[:comment])
+  		if @comment.update(comment_params)
     		redirect_to blog_path(@blog)
   		else
     		render :action => :edit
@@ -46,9 +47,8 @@ class CommentsController < ApplicationController
 
 	def destroy
 	  @blog = Blog.find(params[:blog_id])
-	  @comment = @blog.comments.find(params[:id]) 
-	  @comment.destroy
-	  redirect_to blog_path(:id => @blog.id)
+	  @comment.destroy(params[:id]) 
+	  redirect_to blog_comment_path(:id => @blog.id)
  	end
 
 
