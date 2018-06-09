@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 	def index
     	@comments = Comment.all
-  		end
+  	end
   	def new
     	@comment = Comment.new
   		end
@@ -47,8 +47,8 @@ class CommentsController < ApplicationController
 
 	def destroy
 	  @blog = Blog.find(params[:blog_id])
-	  @comment.destroy(params[:id]) 
-	  redirect_to blog_comment_path(:id => @blog.id)
+	  @comment = @blog.comments.destroy(params[:id]) 
+	redirect_to blog_path(@blog)  
  	end
 
 

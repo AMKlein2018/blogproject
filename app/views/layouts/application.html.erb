@@ -17,14 +17,12 @@
     <% end %>
 
     <% if signed_in? %>
-    <li><%= link_to "New Blog", new_blog_path %>
+    <li><%= link_to "New Post", new_blog_path %>
     <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li><br />
 
-    Current User: <a href='/users/show'<%= current_user.id %>'><%= current_user.email %></a>
-    <% end %>
 
-   
-    
+    Current User: <a href='/profile/<%=current_user.id %>'<%= current_user.id %>'><%= current_user.email %></a>
+    <% end %>
 
   </nav>
 

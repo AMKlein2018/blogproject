@@ -1,0 +1,19 @@
+<h1>User Profile Page</h1>
+
+<div>
+	<div>
+		User: <%= @user.email %><br />
+		<%= link_to "Create Blog", new_blog_path %>
+		<%= link_to "Edit Blog", edit_blog_path %>
+		<%= link_to "Delete Blog", blog_path, method: :delete %>
+	</div><br />
+	
+	<% @user.blogs.each do |b| %><br />
+		<div>Title: <%= b.title %><br /> Sport: <%= b.sport %><br />
+		</div>
+		Blog Post: <%= b.content %><br />
+	<% end %>
+	</div>
+<hr>
+
+

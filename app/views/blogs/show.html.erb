@@ -1,17 +1,20 @@
 <h1>Blog Profile</h1>
 
 
-<div>
-	<div><%= @blog.title %></div>
-	<div><%= @blog.content %></div>
-	<div><%= @blog.sport %></div>
 <%= link_to "Edit Blog", edit_blog_path %>
 	<br>
 <%= link_to "Delete Blog", blog_path, method: :delete %>
 <br>
 <%= link_to "Create Blog", new_blog_path %>
-</div>
+
 <hr>
+
+	<div>
+		Topic: <%= @blog.title %>
+		Sport: <%= @blog.sport %>
+	</div><br>
+	<div>Content: <%= @blog.content %></div>
+	
 
 <ul>
 <% @blog.comments do |c| %>
@@ -21,24 +24,20 @@
 
 <%= render 'comments/form' %>
 
-
+	
 
 <!-- update comments -->
 <ul>
 <% @blog.comments.each do |comment| %>
   <li><%= comment.content %></li>  
   <%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %>
-  <%= link_to "Delete Comment", blog_comment_path, method: :delete %>
+  <%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>
 <% end %>
 
 
 <!-- end update comments  -->
 
 
-<!-- Delete Comments -->
-
-
-<!-- end Delete Comments -->
 
 
 

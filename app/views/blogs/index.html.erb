@@ -1,13 +1,25 @@
-<h1>Adam's Sports Blog</h1>
+<div class = 'SportHeader'>
+<h1>Sports Blog Rants</h1>
+</div>
 
+<div class = 'ListHeader'
 <h3>List of all Blogs</h3>
+</div>
 
 <% @blogs.each do |b| %>
-
-<div class ='blog-list'>
-Title: <%= b.title %><br />
-Content: <%= b.content %><br />
-Sport Type: <%= b.sport %><br />
-Comment: 
-<hr>
+	<div>
+	Title: <%= b.title %> 
+	Sport: <%= b.sport %><br />
+	</div><br />
+	Blog Post:<br />
+	<%= b.content %><br />
+	
+<hr>	
+	<% b.comments.each do |c| %>
+		<div class ='blog-list'>
+		Comment:<br /> <%= c.content %><br />
+		
+		<hr>
+		</div>
+	<% end %>
 <% end %>
