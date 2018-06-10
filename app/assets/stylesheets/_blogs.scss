@@ -127,13 +127,62 @@
 }
 
 
+//end of show.html.erb
+
+
+
+//start of new.html.erb
+
+
+.createblogheader {
+
+	font-size: 30px;
 
 
 
 
+}
 
 
 
+.blogcontent {
+
+	text-align: center;
+	width: 50%;
+	position: relative;
+	left: 250px;
+
+}
+
+.createcontent {
+
+border-style: groove;
+    border-width: 7px;
+    border-color: coral;
+    background-color: #BCCBFF;
+    padding-top: 15px;
+	text-align: center;
+	width: 50%;
+	position: relative;
+	left: 250px;
+	// bottom: 0px;
+	height: 220px;
+	font-size: 20px;
+
+
+}
+
+.contentsubmit {
+
+	text-align: center;
+	width: 50%;
+	position: relative;
+	left: 250px;
+
+}
+
+
+//end of new.html.erb
 
 
 
