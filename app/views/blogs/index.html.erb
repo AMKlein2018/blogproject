@@ -1,25 +1,30 @@
 <div class = 'SportHeader'>
-<h1>Sports Blog Rants</h1>
+<h1>Sports Blog Rants: List of all Blogs </h1>
 </div>
 
-<div class = 'ListHeader'
-<h3>List of all Blogs</h3>
-</div>
 
-<% @blogs.each do |b| %>
-	<div>
-	Title: <%= b.title %> 
-	Sport: <%= b.sport %><br />
-	</div><br />
-	Blog Post:<br />
-	<%= b.content %><br />
-	
-<hr>	
-	<% b.comments.each do |c| %>
-		<div class ='blog-list'>
-		Comment:<br /> <%= c.content %><br />
-		
-		<hr>
+<% @blogs.each do |b| %><br />
+	<div class = "blogcomment">
+		<div class = "titleclass">Title:<br /> <%= b.title %><br /><br />
+		Sport: <br /><%= b.sport %><br />
 		</div>
-	<% end %>
+
+		<br />
+
+		<div class = "bposttitle">Blog Post:<br /><hr>
+			<div class = "bcontent"><%= b.content %></div>
+		</div>
+		
+	
+<!-- <hr>	 -->
+			<% b.comments.each do |c| %><br />
+				<div class ='comment-list'>Comment:<br /><hr>
+				<%= c.content %><br />
+		
+				</div>
+			<% end %>
+	</div>
+
+	<!-- </div> -->
+	
 <% end %>

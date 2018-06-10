@@ -2,3 +2,60 @@
 @import 'comments';
 @import 'profile';
 @import 'users';
+
+.wrapper {
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+
+  max-width: 960px; /* 2 */
+
+  padding-right: 10px; /* 3 */
+  padding-left:  10px; /* 3 */
+}
+
+nav li {
+
+	display: inline-block;
+	text-align: center;
+	border: 2px solid black;
+	width: 200px;
+	position: relative;
+	// left: 200px;
+	background-color: #ECF3F8;
+	left: 200px;
+	border-radius: 30px;
+
+
+}
+
+
+.currentuser {
+
+	text-align: center;
+	border: 2px solid black;
+	width: 200px;
+	position: relative;
+	// left: 200px;
+	background-color: #ECF3F8;
+	left: 400px;
+	border-radius: 30px;
+	font-size: 10px;
+
+
+}
+
+
+body {
+
+	background-color: #FFF7DA;
+	padding-top: 20px;
+
+
+}
+
+.bpost {
+
+	overflow: auto;
+
+}
+

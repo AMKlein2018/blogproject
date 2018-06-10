@@ -1,19 +1,20 @@
-<h1>User Profile Page</h1>
-
-<div>
-	<div>
-		User: <%= @user.email %><br />
-		<%= link_to "Create Blog", new_blog_path %>
-		<%= link_to "Edit Blog", edit_blog_path %>
-		<%= link_to "Delete Blog", blog_path, method: :delete %>
-	</div><br />
 	
-	<% @user.blogs.each do |b| %><br />
-		<div>Title: <%= b.title %><br /> Sport: <%= b.sport %><br />
-		</div>
-		Blog Post: <%= b.content %><br />
-	<% end %>
+<div class = "profileheader">
+	<h1>User Profile Blog Page:</h1>
+</div>
+		<div class = "showlinks"><nav>
+			<li><%= link_to "Create Blog" , new_blog_path %></li>
+			<li><%= link_to "Edit Blog" , edit_blog_path %></li>
+			<li><%= link_to "Delete Blog", blog_path, method: :delete %></li>
+		</nav></div><br />
 	</div>
-<hr>
 
-
+	<div class = "userblogs">
+		<% @user.blogs.each do |b| %><br />
+			<div>Title: <%= b.title %><br /> Sport: <%= b.sport %><br />
+			</div>
+			Blog Post: <%= b.content %><br />
+			<hr>
+		<% end %>
+		
+	</div>
