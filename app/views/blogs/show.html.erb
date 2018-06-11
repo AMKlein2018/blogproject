@@ -34,8 +34,8 @@
 		
 		<div class = "clinkcomments">
 			<% @blog.comments.each do |comment| %>
-		  	<%= comment.content %>
-			  <div class = "commentlinks"><br />
+		  	<%= comment.content %><br />
+			  <div class = "commentlinks">
 			  	<%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %>
 			  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>
 			  </div>
