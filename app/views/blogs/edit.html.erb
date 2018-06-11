@@ -1,10 +1,10 @@
-<div class = "updateblog"<h2>Update Sports Blog:</h2></div>
+<div class = "updateblogheader"><h2>Update Sports Blog:</h2></div>
 
 <%= form_for @blog do |u| %>
 	Title: <%= u.text_field :title %><br />
 	Sport: <%= u.text_field :sport %><br />
 	<hr>
-	<div class = "upcontentheader">Updating Content:</div><br />
+	<div class = "upcontentheader">Blog Update:</div><br />
 	 <div class = "updatecontent"><%= u.text_area :content, :cols => 70, :rows => 15 %></div>
 	 <br />
 	

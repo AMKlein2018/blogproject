@@ -75,26 +75,17 @@
 
 //end of index.html.erb
 
-
+// *********************************************
 
 //start of show.html.erb
 
+.showlinks {
 
-.profileheader {
-
-	// border: 2px solid black;
-	margin-top: 10px;
-	height: 50px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	position: relative;
-	text-align: center;
-	border-radius: 30px;
-	padding-bottom: 20px;
+	background-color: lightblue;
+	border-style: groove;
+	border-width: 5px;
+	border-color: blue;
 }
-
 
 .showlinks li {
 
@@ -110,7 +101,25 @@
 
 }
 
-.userblogs{
+
+.showcontentheader {
+
+	// border: 2px solid black;
+	margin-top: 10px;
+	height: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	text-align: center;
+	border-radius: 30px;
+	padding-bottom: 20px;
+}
+
+
+
+.scontent{
 
 	border-style: groove;
     border-width: 7px;
@@ -122,14 +131,13 @@
 	position: relative;
 	left: 250px;
 	// bottom: 0px;
-	height: 250px;
+	height: 350px;
 	font-size: 20px;
 }
 
 
-//end of show.html.erb
 
-
+// *********************************************
 
 //start of new.html.erb
 
@@ -138,11 +146,7 @@
 
 	font-size: 30px;
 
-
-
-
 }
-
 
 
 .blogcontent {
@@ -181,14 +185,54 @@ border-style: groove;
 
 }
 
-
 //end of new.html.erb
 
+// *********************************************
 
+// start of edit.html.erb
 
+.updateblogheader {
 
+	font-size: 30px;
 
+}
 
+.upcontentheader {
+
+	text-align: center;
+	width: 50%;
+	position: relative;
+	left: 250px;
+
+}
+
+.updatecontent {
+
+	border-style: groove;
+    border-width: 7px;
+    border-color: coral;
+    background-color: #BCCBFF;
+    padding-top: 15px;
+	text-align: center;
+	width: 50%;
+	position: relative;
+	left: 250px;
+	// bottom: 0px;
+	height: 220px;
+	font-size: 20px;
+
+}
+
+.updatesubmit {
+
+	text-align: center;
+	width: 50%;
+	position: relative;
+	left: 250px;
+
+}
+
+//end of edit.html.erb
 
 
 

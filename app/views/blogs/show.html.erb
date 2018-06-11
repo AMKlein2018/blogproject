@@ -1,38 +1,46 @@
-<h1>Blog Profile</h1>
+<div class = "sblogheader">
+	<h1>Blog Profile:</h1>
+	Topic: <%= @blog.title %><br />
+	Sport: <%= @blog.sport %>
+</div>
+	<hr>
 
-
-<%= link_to "Edit Blog", edit_blog_path %>
-	<br>
-<%= link_to "Delete Blog", blog_path, method: :delete %>
-<br>
-<%= link_to "Create Blog", new_blog_path %>
-
+<div class = "showlinks"><nav>
+			<li><%= link_to "Create Blog" , new_blog_path %></li>
+			<li><%= link_to "Edit Blog" , edit_blog_path %></li>
+			<li><%= link_to "Delete Blog", blog_path, method: :delete %></li>
+		</nav></div><br />
+	</div>
 <hr>
 
-	<div>
-		Topic: <%= @blog.title %>
+	<!-- <div>
+		Topic: <%= @blog.title %><br />
 		Sport: <%= @blog.sport %>
-	</div><br>
-	<div>Content: <%= @blog.content %></div>
+	</div><br><hr> -->
 	
-
-<ul>
-<% @blog.comments do |c| %>
-	<li><%= c.content %></li>
-<% end %>
-</ul>
-
-<%= render 'comments/form' %>
-
+	<div class = "scontent">Content: <br /><hr>
+		<%= @blog.content %>
+	
+		<ul>
+		<% @blog.comments do |c| %>
+			<li><%= c.content %></li>
+		<% end %>
+		</ul>
+	</div>
+	<br /> <%= render 'comments/form' %><br />
 	
 
 <!-- update comments -->
-<ul>
-<% @blog.comments.each do |comment| %>
-  <li><%= comment.content %></li>  
-  <%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %>
-  <%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>
-<% end %>
+		
+		<div class = "clinkcomments">
+			<% @blog.comments.each do |comment| %>
+		  	<%= comment.content %>
+			  <div class = "commentlinks"><br />
+			  	<%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %>
+			  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>
+			  </div>
+		 </div>
+		<% end %>
 
 
 <!-- end update comments  -->

@@ -1,5 +1,5 @@
 <%= form_for [@blog, @comment] do |f| %>
-  <%= f.label :comment %><br>
-  <%= f.text_area :content %><br>
-  <%= f.submit %>
+  <div class = "commentheader"><%= f.label :comment %><br>
+  <div class = "updatecomment"><%= f.text_area :content, :cols => 83, :rows => 3 %><br>
+  <div class = "commentsubmit"><%= f.submit %></div>
 <% end %>
