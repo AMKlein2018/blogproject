@@ -1,0 +1,71 @@
+nav{
+  text-transform: uppercase;
+  font-family: Lato;
+  background-color: #44ABC4;
+  text-align: center;
+  letter-spacing: 2px;
+  padding: 10px;
+  font-size: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 20px;
+
+}
+
+nav a:link{
+  text-decoration: none;
+  color: #E3EAED;
+}
+
+nav a:visited{
+  color: #E3EAED;
+}
+
+nav a:hover{
+  text-decoration: underline;
+}
+
+#clock {
+
+  font-size: 16px;
+  // border: 2px solid black;
+  color: solid black;
+  // background-color: lightgrey;
+  width: 150px;
+
+  
+}
+
+
+.currentuser {
+
+  // border: 2px solid red;
+  position: relative;
+  top: 35px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  margin-left: 20px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

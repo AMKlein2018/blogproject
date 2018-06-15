@@ -7,36 +7,83 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+
   </head>
   <body>
-      <div class = "wrapper">
         <nav>
-          <li><a href='/'>Home</a></li>
+          <a href='/'>Home</a> |
 
           <% if !signed_in? %>
-          <li><a href='/users/sign_up'>Sign up</a></li>
-          <li><a href='/users/sign_in'>Log In</a></li>
+          <a href='/users/sign_up'>Sign up</a> |
+          <a href='/users/sign_in'>Log In</a> |
           <% end %>
 
           <% if signed_in? %>
-          <li><%= link_to "New Post", new_blog_path %>
-          <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li><br /><br />
-
-
-          <div class = "currentuser">Current User: <a href='/profile/<%=current_user.id %>'<%= current_user.id %>'><%= current_user.email %></a></div>
-
-
-
-          <% end %>
+          <%= link_to "New Post", new_blog_path %> |
+          <%= link_to "Edit Account",  edit_user_registration_path %> |
+          <%= link_to "Sign out",destroy_user_session_path, method: :delete %><br /><br /> 
+          <div id = "clock"></div> 
 
         </nav>
-        <div id = "clock"></div>
 
-      </div>
+        <% end %>
+        
+        <div class = "currentuser">Current User: 
+          <a href='/profile/<%=current_user.id %>'<%= current_user.id %>'><%= current_user.email %></a> 
+        
+        </div><br />
+        
+          
+
+          
+        
 
   <%= javascript_include_tag "main" %> 
-    <%= yield %>
      <p class="notice"><%= notice %></p>
      <p class="alert"><%= alert %></p>
+   <div class="content"><%= yield %></div>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

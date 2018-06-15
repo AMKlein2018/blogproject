@@ -3,30 +3,21 @@
 </div>
 
 
-<% @blogs.each do |b| %><br />
-	<div class = "blogcomment">
-		<div class = "titleclass">Title:<br /> <%= b.title %><br /><br />
-		Sport: <br /><%= b.sport %><br />
-		</div>
-
-		<br />
-
-		<div class = "bposttitle"><a href = "/blogs/<%= b.id %>">Blog Post:</a>
-			<!-- <button id = "blogbutton">Go to Blog</button> -->
-			<button id = "commentbutton">Show Comments</button><br /><hr>
-			<div class = "bcontent"><%= b.content %></div>
-		</div>
-		
+<% @blogs.each do |b| %><br /><hr>
+	<div class = "bposttitle"><a href = "/blogs/<%= b.id %>">Blog Post:</a> |
+			Title: <%= b.title %> |
+			Sport: <%= b.sport %><br />
+			</div>
+			<div class = "bcontent">Content: <%= b.content %></div>
+			<br />
 	
-<!-- <hr>	 -->
-			<% b.comments.each do |c| %><br />
-				<div class ='comment-list'>Comment:<br /><hr>
-				<%= c.content %><br />
+			<% b.comments.each_with_index do |c, index| %><br />
+				 <div class ='comment-list' ><%= index + 1 %>. Comment:<br /><br />
+					  <%= c.content %><br />
 		
 				</div>
 			<% end %>
-	</div>
-
-	<!-- </div> -->
 	
 <% end %>
+
+</div>
