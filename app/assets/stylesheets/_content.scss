@@ -5,11 +5,13 @@
   margin-left: 10px;
   text-align: center;
   overflow: auto;
+  
 }
 
 body{
   font-family: Lato;
   background-color: #11141C;
+
 }
 
 h1, h2, h3{
@@ -24,7 +26,7 @@ h1, h2, h3{
 
 a:link{
   text-decoration: none;
-  color: #44ABC4;
+  color: white;
 }
 
 a:visited{
@@ -34,3 +36,55 @@ a:visited{
 a:hover{
   text-decoration: underline;
 }
+
+hr {
+  height: 5px;
+  background-color: #8DCAE0;
+  width: 90%;
+  border-radius: 30px;
+
+}
+
+.comment-list {
+
+  border: 2px solid black;
+  width: 50%;
+  margin-left: 270px;
+  border-radius: 30px;
+  background-color: #9BE2FF
+
+}
+
+.newcomments {
+
+  border: 2px solid black;
+  width: 50%;
+  margin-left: 270px;
+  border-radius: 30px;
+  background-color: #9BE2FF
+
+
+}
+
+
+
+.addcomments {
+
+  border: 2px solid black;
+  width: 50%;
+  margin-left: 270px;
+  border-radius: 30px;
+  background-color: #9BE2FF
+
+}
+
+
+
+
+
+
+
+
+
+
+

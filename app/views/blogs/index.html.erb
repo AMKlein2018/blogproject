@@ -1,10 +1,10 @@
 <div class = 'SportHeader'>
-<h1>Sports Blog Rants: List of all Blogs </h1>
+<h1>Sports Blog Rants: </h1>
 </div>
 
 
-<% @blogs.each do |b| %><br /><hr>
-	<div class = "bposttitle"><a href = "/blogs/<%= b.id %>">Blog Post:</a> |
+<% @blogs.each do |b| %><div class = "bposttitle"><a href = "/blogs/<%= b.id %>"><hr>Blog Post:</a><br />
+	
 			Title: <%= b.title %> |
 			Sport: <%= b.sport %><br />
 			</div>
