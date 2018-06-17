@@ -30,16 +30,20 @@
 
 <!-- update comments -->
 		
-		<!-- <div class = "firstcomments"> -->
-		<% @blog.comments.each_with_index do |comment, index| %>
+		<% if current_user && current_user.id === @blog.user_id %>
+			<% @blog.comments.each_with_index do |comment, index| %>
 
-		  	<div class = "addcomments"><%= index + 1 %>. <%= comment.content %><br /><br />
+			  	<div class = "addcomments"><%= index + 1 %>. <%= comment.content %><br /><br />
 
-			  <!-- <div class = "commentlinks"> -->
-			  	<%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %> •
-			  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>
-			 </div><br />
+				  <!-- <div class = "commentlinks"> -->
+				  
+					  	<%= link_to "Edit", edit_blog_comment_path(:blog_id => @blog.id, :id => comment.id) %> •
+					  	<%= link_to "Delete", blog_comment_path(:blog_id => @blog.id, :id => comment.id), :method => :delete %>
+				 	
+				</div><br />
+				 
 
+			<% end %>
 		<% end %>
 
 

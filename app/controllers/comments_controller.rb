@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   	end
   	def new
     	@comment = Comment.new
-  		end
+  	end
 
 	def create
 		user = current_user
